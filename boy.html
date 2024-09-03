@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Boy draw </title>
+    <style>
+        body{ 
+            margin: auto;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100vh;
+            background-image: url(photo_2024-07-26_11-55-35.jpg) ;
+        }
+        .container{
+            margin: auto;
+            margin-top: 200px;
+            width: fit-content;
+            height: auto;
+            overflow: hidden;
+        }
+        .face{
+            background-color: #f0e9e0;
+            border: 8px solid #d6a29a;
+            width: 230px;
+            height: 250px;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-top-left-radius: 90px;
+            position: relative;
+            z-index: 5;
+        }
+        .face::after{
+            content: '';
+            position: absolute;
+            z-index: 20;
+            width: 50px;
+            height: 25px;
+            background-color: rgba(250, 218, 184, 0.731);
+            border-radius: 50% 50% 49% 51% / 69% 73% 27% 31%  ;
+            top: 180px;
+            rotate: 55deg;
+            left: 6px;
+            border-bottom: 4px solid #d6a29a;
+        }
+        .face::before{
+            content: '';
+            position: absolute;
+            z-index: 20;
+            width: 50px;
+            height: 25px;
+            background-color: rgba(250, 218, 184, 0.731);
+            border-radius: 50% 50% 49% 51% / 69% 73% 27% 31%  ;
+            top: 180px;
+            rotate: -55deg;
+            right: 6px;
+            border-bottom: 4px solid #d6a29a;
+        }
+        .container::after{
+            content: '';
+            border: 8px solid #d6a29a;
+            width: 230px;
+            height: 230px;
+            position: absolute;
+            background-color: #edb7af;
+            border-radius: 50%;
+            left: 60px;
+            top: -95px;
+            z-index: 0;
+        }
+        .container::before{
+            content: '';
+            border: 8px solid #d6a29a;
+            border-left: none;
+            width: 280px;
+            height: 260px;
+            position: absolute;
+            background-color: #edb7af;
+            border-radius: 34% 66% 59% 41% / 100% 49% 51% 0% ;
+            right: 50px;
+            top: -100px;
+            z-index: 1;
+        }
+
+        .earing{
+            background-color: #f0e9e0;
+            border: 8px solid #d6a29a;
+            position: absolute;
+            height: 50px;
+            width: 320px;
+            bottom: 180px;
+            right: 73px;
+            border-radius: 40px 40px ;
+            z-index: 4;
+        }
+        .earing::after{
+            content: '';
+            background-color: #d6a29a ;
+            position: absolute;
+            width: 40px;
+            height: 8px;
+            left: 18px;
+            top: 20px;
+            border-radius: 40px 40px ;
+        }
+        .earing::before{
+            content: '';
+            background-color: #d6a29a ;
+            position: absolute;
+            width: 40px;
+            height: 8px;
+            right: 18px;
+            top: 20px;
+            border-radius: 40px 40px ;
+        }
+        .hair1{
+            width: 50px;
+            height: 150px;
+            background-color: #edb7af;
+            border: 4px solid #d6a29a;
+            border-top: none;
+            border-right: none;
+            position: absolute;
+            border-radius: 34% 66% 22% 78% / 47% 7% 93% 53% ;
+            z-index: 7;
+            top: -50px;
+            right: 200px;
+            rotate: -10deg;
+        }
+        .hair2{
+            width: 50px;
+            height: 150px;
+            background-color: #edb7af;
+            border: 4px solid #d6a29a;
+            border-top: none;
+            border-left: none;
+            position: absolute;
+            border-radius: 34% 66% 22% 78% / 47% 7% 93% 53% ;
+            z-index: 7;
+            top: -50px;
+            left: 270px;
+            rotate: 10deg;
+        }
+        .hair3{
+            width: 90px;
+            height: 180px;
+            background-color: #edb7af;
+            border: 4px solid #d6a29a;
+            border-top: none;
+            border-right: none;
+            position: absolute;
+            border-radius: 34% 66% 22% 78% / 47% 7% 93% 53% ;
+            z-index: 6;
+            top: -50px;
+            right: 95px;
+            rotate: -10deg;
+        }
+        .hair3::after{
+            content: '';
+            background-color: #edb7af;
+            border: 4px solid #d6a29a;
+            height: 140px;
+            width: 50px;
+            border-radius: 0% 100% 100% 0% / 51% 0% 100% 49%   ;
+            position: absolute;
+            top: 0px;
+            left: 10px;
+            rotate: 12deg;
+            border-left: none;
+            border-top: none;
+        }
+        .hair3::before{
+            content: '';
+            background-color: #edb7af;
+            border: 2px solid #d6a29a;
+            height: 120px;
+            width: 60px;
+            border-radius: 0% 100% 97% 3% / 75% 0% 100% 25% ;
+            position: absolute;
+            rotate: 8deg;
+            top: 15px;
+            left: 19px;
+            border-top: none;
+        }
+        .hair4{
+            width: 130px;
+            height: 190px;
+            background-color: #edb7af;
+            border: 4px solid #d6a29a;
+            border-top: none;
+            border-left: none;
+            position: absolute;
+            border-radius: 34% 66% 22% 78% / 47% 7% 93% 53% ;
+            z-index: 6;
+            top: -80px;
+            left: 99px;
+            rotate: 40deg;
+        }
+        .hair4::after{
+            content: '';
+            width: 60px;
+            height: 150px;
+            background-color: #edb7af;
+            border: 4px solid #d6a29a;
+            border-top: none;
+            border-right: none;
+            position: absolute;
+            border-radius: 0% 100% 100% 0% / 75% 0% 100% 25% ;
+            z-index: 6;
+            top: -15px;
+            left: 57px;
+            rotate: -16deg;
+        }
+        .eybrowR{
+            width: 100px ;
+            height: 20px;
+            position: absolute;
+            background-color: rgba(46, 0, 0, 0.703);
+            border-radius: 48% 52% 37% 63% / 100% 0% 100% 0% ;
+            left: 270px;
+            top: 95px;
+            z-index: 5;
+        }
+        .eybrowL{
+            width: 100px ;
+            height: 20px;
+            position: absolute;
+            background-color: rgba(46, 0, 0, 0.703);
+            border-radius:48% 52% 37% 63% / 0% 100% 0% 100% ;
+            right: 260px;
+            top: 95px;
+            z-index: 5;
+        }
+        .eyesR,.eyesL{
+            position: absolute;
+            z-index: 6;
+            width:40px;
+            height: 40px;
+            border-radius: 50%;
+            /* background-color: #edb7af; */
+            border: 5px solid #d6a29a;
+            background: rgb(255,255,255);
+            background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(214,162,154,1) 97%);
+            top: 120px;
+        }
+        .eyesR{
+            right: 155px;
+        }
+        .eyesL{
+            left: 160px;
+        }
+        .eyesL::after{
+            content: '';
+            width: 25px;
+            height: 25px;
+            background-color: #d6a29a;
+            position: absolute;
+            border-radius: 50%;
+            left: 7.5px ;
+            top: 7.5px;
+            z-index: 8;
+        }
+        .eyesL::before{
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: #ffffff;
+            position: absolute;
+            border-radius: 50%;
+            left: 7.5px ;
+            top: 7.5px;
+            z-index: 9;
+        }
+        .eyesR::after{
+            content: '';
+            width: 25px;
+            height: 25px;
+            background-color: #d6a29a;
+            position: absolute;
+            border-radius: 50%;
+            left: 7.5px ;
+            top: 7.5px;
+        }
+        .eyesR::before{
+            content: '';
+            width: 15px;
+            height: 15px;
+            background-color: #ffffff;
+            position: absolute;
+            border-radius: 50%;
+            left: 7.5px ;
+            top: 7.5px;
+            z-index: 9;
+        }
+        .ligne1,.ligne2{
+            width: 38px;
+            height: 5px;
+            position: absolute;
+            top: 120px;
+            background-color: #d6a29a;
+            z-index: 9;
+            border-radius: 20px 20px;
+            
+        }
+        .ligne1{
+            left: 145px;
+        }
+        .ligne2{
+            right: 140px;
+        }
+        .nose{
+            position: absolute;
+            z-index: 9;
+            width: 12px;
+            height: 20px;
+            rotate: 30deg;
+            border: 6px solid #d6a29a;
+            border-top: none;
+            border-right: none;
+            border-radius: 4px 6px 3px 4px;
+            top: 160px;
+            left: 240px;
+        }
+        .mouth{
+            position: absolute;
+            width: 50px;
+            height: 15px;
+            background-color: #ffffff;
+            border: 6px solid #d6a29a;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            top: 210px;
+            z-index: 9;
+            left: 215px;
+        }
+        .cnt{
+            max-width: 485px;
+            height: 360px;
+            position: relative;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="cnt">
+        <div class="container">
+            <div class="head"></div>
+            <div class="face"></div>
+            <div class="earing"></div>
+            <div class="hair1"></div>
+            <div class="hair2"></div>
+            <div class="hair3"></div>
+            <div class="hair4"></div>
+            <div class="hair5"></div>
+            <div class="eybrowR"></div>
+            <div class="eybrowL"></div>
+            <div class="eyesR"></div>
+            <div class="eyesL"></div>
+            <div class="ligne1"></div>
+            <div class="ligne2"></div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
