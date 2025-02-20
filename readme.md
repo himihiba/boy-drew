@@ -6,3 +6,7 @@ A CSS-based drawing of a boy's face created using HTML and CSS, demonstrating pu
 # Demo
 
 [Live Demo](#) (https://himihiba.github.io/boy-drew/)
+
+# Photo
+
+![](result.png)  
